@@ -3,9 +3,7 @@
 This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
 <lib desc="#Wiring" name="0">
     <tool name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="32"/>
-      <a name="incoming" val="32"/>
+      <a name="fanout" val="4"/>
       <a name="appear" val="center"/>
     </tool>
     <tool name="Pin">
@@ -14,8 +12,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <tool name="Probe">
       <a name="facing" val="west"/>
     </tool>
+    <tool name="Tunnel">
+      <a name="facing" val="east"/>
+    </tool>
     <tool name="Pull Resistor">
       <a name="facing" val="north"/>
+    </tool>
+    <tool name="Constant">
+      <a name="width" val="6"/>
+      <a name="value" val="0x2"/>
     </tool>
     <tool name="Power">
       <a name="facing" val="south"/>
@@ -1924,7 +1929,13 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <circ-port height="10" pin="160,1040" width="10" x="225" y="45"/>
       <circ-anchor facing="east" height="6" width="6" x="87" y="47"/>
     </appear>
+    <wire from="(530,760)" to="(530,770)"/>
+    <wire from="(610,760)" to="(610,770)"/>
+    <wire from="(550,740)" to="(550,760)"/>
+    <wire from="(590,740)" to="(590,760)"/>
     <wire from="(160,60)" to="(190,60)"/>
+    <wire from="(530,760)" to="(550,760)"/>
+    <wire from="(590,760)" to="(610,760)"/>
     <wire from="(400,150)" to="(420,150)"/>
     <wire from="(400,110)" to="(420,110)"/>
     <wire from="(400,310)" to="(420,310)"/>
@@ -2004,6 +2015,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="7"/>
       <a name="label" val="TTY DATA"/>
     </comp>
+    <comp lib="0" loc="(510,630)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM OUTPUT 0"/>
+    </comp>
     <comp lib="6" loc="(177,113)" name="Text">
       <a name="text" val="DATA FROM RAM"/>
       <a name="font" val="SansSerif plain 20"/>
@@ -2011,6 +2027,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(180,920)" name="Tunnel">
       <a name="width" val="4"/>
       <a name="label" val="Read Time"/>
+    </comp>
+    <comp lib="0" loc="(630,740)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="RW"/>
     </comp>
     <comp lib="6" loc="(181,842)" name="Text">
       <a name="text" val="DATA WRITE MASK"/>
@@ -2051,12 +2071,22 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(420,210)" name="Tunnel">
       <a name="label" val="TTY ENABLE"/>
     </comp>
+    <comp lib="0" loc="(510,690)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM OUTPUT 2"/>
+    </comp>
     <comp lib="6" loc="(177,471)" name="Text">
       <a name="text" val="DATA TO RAM"/>
       <a name="font" val="SansSerif plain 20"/>
     </comp>
     <comp lib="0" loc="(420,50)" name="Tunnel">
       <a name="label" val="KBD ENABLE"/>
+    </comp>
+    <comp lib="0" loc="(510,720)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM OUTPUT 3"/>
     </comp>
     <comp lib="0" loc="(180,160)" name="Tunnel">
       <a name="width" val="32"/>
@@ -2065,6 +2095,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="6" loc="(409,31)" name="Text">
       <a name="text" val="KEYBOARD"/>
       <a name="font" val="SansSerif plain 20"/>
+    </comp>
+    <comp lib="0" loc="(610,770)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Write Time"/>
     </comp>
     <comp lib="0" loc="(160,400)" name="Pin">
       <a name="width" val="32"/>
@@ -2092,6 +2127,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="RAM A"/>
     </comp>
     <comp lib="0" loc="(180,240)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="RAM OUTPUT 1"/>
+    </comp>
+    <comp lib="0" loc="(510,660)" name="Tunnel">
+      <a name="facing" val="east"/>
       <a name="width" val="32"/>
       <a name="label" val="RAM OUTPUT 1"/>
     </comp>
@@ -2131,6 +2171,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="text" val="RAM CONTROL"/>
       <a name="font" val="SansSerif plain 20"/>
     </comp>
+    <comp loc="(710,630)" name="RAM Access"/>
     <comp lib="0" loc="(420,110)" name="Tunnel">
       <a name="label" val="KBD AVAIL"/>
     </comp>
@@ -2146,6 +2187,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
       <a name="label" val="RAM In 3"/>
+    </comp>
+    <comp lib="0" loc="(530,770)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Read Time"/>
     </comp>
     <comp lib="0" loc="(180,320)" name="Tunnel">
       <a name="width" val="32"/>
@@ -2171,6 +2217,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Stop"/>
+    </comp>
+    <comp lib="0" loc="(670,740)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(420,150)" name="Tunnel">
       <a name="width" val="7"/>
@@ -2587,75 +2637,107 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
-    <comp lib="0" loc="(280,450)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="Rt"/>
-    </comp>
-    <comp lib="0" loc="(280,510)" name="Tunnel">
-      <a name="width" val="16"/>
-      <a name="label" val="Constante"/>
-    </comp>
-    <comp lib="0" loc="(280,530)" name="Tunnel">
-      <a name="width" val="26"/>
-      <a name="label" val="Destino-Salto"/>
-    </comp>
-    <comp lib="0" loc="(280,410)" name="Tunnel">
-      <a name="width" val="6"/>
-      <a name="label" val="Op-code"/>
-    </comp>
-    <comp lib="0" loc="(280,490)" name="Tunnel">
-      <a name="width" val="6"/>
-      <a name="label" val="Func-code"/>
-    </comp>
-    <comp lib="0" loc="(510,450)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="Constante"/>
-    </comp>
-    <comp loc="(650,430)" name="ALU Control"/>
-    <comp lib="0" loc="(280,470)" name="Tunnel">
+    <wire from="(690,410)" to="(690,420)"/>
+    <wire from="(690,270)" to="(690,280)"/>
+    <wire from="(660,260)" to="(660,270)"/>
+    <wire from="(710,370)" to="(710,380)"/>
+    <wire from="(610,410)" to="(610,420)"/>
+    <wire from="(620,400)" to="(620,410)"/>
+    <wire from="(680,380)" to="(680,410)"/>
+    <wire from="(650,390)" to="(650,450)"/>
+    <wire from="(680,410)" to="(690,410)"/>
+    <wire from="(610,410)" to="(620,410)"/>
+    <comp lib="0" loc="(300,320)" name="Tunnel">
       <a name="width" val="5"/>
       <a name="label" val="Rd"/>
     </comp>
-    <comp lib="0" loc="(650,430)" name="Tunnel">
-      <a name="label" val="Sign"/>
+    <comp lib="0" loc="(720,330)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="ALU R"/>
     </comp>
-    <comp lib="0" loc="(510,430)" name="Tunnel">
-      <a name="facing" val="east"/>
+    <comp lib="0" loc="(710,380)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="I"/>
+    </comp>
+    <comp lib="0" loc="(300,300)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+    </comp>
+    <comp lib="0" loc="(610,420)" name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="width" val="6"/>
-      <a name="label" val="Func-code"/>
+      <a name="label" val="Op-code"/>
     </comp>
-    <comp lib="0" loc="(650,450)" name="Tunnel">
-      <a name="width" val="32"/>
-      <a name="label" val="Constante32"/>
+    <comp lib="0" loc="(300,360)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="Constante"/>
     </comp>
-    <comp lib="0" loc="(100,470)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="32"/>
-      <a name="label" val="Instruction"/>
+    <comp lib="0" loc="(300,260)" name="Tunnel">
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
     </comp>
-    <comp lib="0" loc="(280,430)" name="Tunnel">
+    <comp lib="0" loc="(300,280)" name="Tunnel">
       <a name="width" val="5"/>
       <a name="label" val="Rs"/>
     </comp>
-    <comp lib="0" loc="(510,410)" name="Tunnel">
+    <comp lib="0" loc="(690,420)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Constante"/>
+    </comp>
+    <comp loc="(430,130)" name="Operation Type"/>
+    <comp lib="0" loc="(430,130)" name="Tunnel">
+      <a name="label" val="I"/>
+    </comp>
+    <comp lib="0" loc="(300,380)" name="Tunnel">
+      <a name="width" val="26"/>
+      <a name="label" val="Destino-Salto"/>
+    </comp>
+    <comp lib="0" loc="(650,450)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Func-code"/>
+    </comp>
+    <comp lib="0" loc="(360,150)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="6"/>
       <a name="label" val="Op-code"/>
     </comp>
-    <comp loc="(280,470)" name="Instruction Decoder"/>
-    <comp lib="0" loc="(120,130)" name="Tunnel">
+    <comp lib="0" loc="(120,320)" name="Tunnel">
+      <a name="facing" val="east"/>
       <a name="width" val="32"/>
       <a name="label" val="Instruction"/>
     </comp>
-    <comp lib="0" loc="(650,410)" name="Tunnel">
-      <a name="width" val="4"/>
-      <a name="label" val="Selector"/>
+    <comp lib="0" loc="(300,340)" name="Tunnel">
+      <a name="width" val="6"/>
+      <a name="label" val="Func-code"/>
+    </comp>
+    <comp loc="(720,330)" name="ALU"/>
+    <comp lib="0" loc="(430,150)" name="Tunnel">
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(430,110)" name="Tunnel">
+      <a name="label" val="R"/>
+    </comp>
+    <comp lib="0" loc="(120,130)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="Instruction"/>
     </comp>
     <comp lib="0" loc="(120,130)" name="Pin">
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
     </comp>
+    <comp lib="0" loc="(660,260)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Hi"/>
+    </comp>
+    <comp lib="0" loc="(690,270)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Lo"/>
+    </comp>
+    <comp loc="(300,320)" name="Instruction Decoder"/>
   </circuit>
   <circuit name="===ALU===">
     <a name="circuit" val="===ALU==="/>
@@ -2668,6 +2750,32 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <a name="clabel" val=""/>
     <a name="clabelup" val="east"/>
     <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M251,208 Q250,226 260,211" fill="none" stroke="#808080" stroke-width="2"/>
+      <polygon fill="none" points="220,198 220,258 269,282 221,299 221,360 350,320 350,237" stroke="#000000" stroke-width="2"/>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="293" y="268">A</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="293" y="288">L</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="293" y="308">U</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="228" y="235">A</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="228" y="335">B</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="291" y="234">Hi</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="321" y="243">Lo</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="252" y="347">Op</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="280" y="336">Func</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="308" y="328">Cst</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="340" y="316">I</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="334" y="285">Out</text>
+      <circ-port height="8" pin="140,110" width="8" x="216" y="226"/>
+      <circ-port height="8" pin="140,230" width="8" x="216" y="326"/>
+      <circ-port height="8" pin="140,320" width="8" x="246" y="346"/>
+      <circ-port height="8" pin="140,380" width="8" x="276" y="336"/>
+      <circ-port height="8" pin="140,450" width="8" x="306" y="326"/>
+      <circ-port height="8" pin="140,530" width="8" x="336" y="316"/>
+      <circ-port height="10" pin="980,170" width="10" x="345" y="275"/>
+      <circ-port height="10" pin="980,310" width="10" x="285" y="215"/>
+      <circ-port height="10" pin="980,450" width="10" x="315" y="225"/>
+      <circ-anchor facing="east" height="6" width="6" x="347" y="277"/>
+    </appear>
     <wire from="(440,370)" to="(510,370)"/>
     <comp lib="0" loc="(140,450)" name="Pin">
       <a name="width" val="16"/>
@@ -2832,7 +2940,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <path d="M360,339 Q370,318 378,341" fill="none" stroke="#808080" stroke-width="2"/>
       <rect fill="none" height="80" stroke="#000000" stroke-width="2" width="140" x="300" y="261"/>
       <text font-family="SansSerif" font-size="14" font-weight="bold" text-anchor="middle" x="370" y="292">ALU</text>
-      <text font-family="SansSerif" font-size="14" font-weight="bold" text-anchor="middle" x="370" y="310">Operations</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="308" y="275">A</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="309" y="295">B</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="313" y="315">Op</text>
@@ -2840,6 +2947,7 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="416" y="284">Output</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="428" y="305">Hi</text>
       <text font-family="SansSerif" font-size="12" text-anchor="middle" x="427" y="324">Lo</text>
+      <text font-family="SansSerif" font-size="14" font-weight="bold" text-anchor="middle" x="371" y="311">OPERATIONS</text>
       <circ-port height="8" pin="140,110" width="8" x="296" y="266"/>
       <circ-port height="8" pin="140,240" width="8" x="296" y="286"/>
       <circ-port height="8" pin="140,340" width="8" x="296" y="306"/>
@@ -6594,8 +6702,8 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <circ-port height="10" pin="290,110" width="10" x="335" y="275"/>
       <circ-anchor facing="east" height="6" width="6" x="337" y="277"/>
     </appear>
-    <wire from="(220,130)" to="(220,180)"/>
     <wire from="(150,110)" to="(210,110)"/>
+    <wire from="(220,130)" to="(220,150)"/>
     <wire from="(230,130)" to="(230,140)"/>
     <wire from="(250,140)" to="(250,150)"/>
     <wire from="(190,120)" to="(190,150)"/>
@@ -6604,6 +6712,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(230,140)" to="(250,140)"/>
     <comp lib="0" loc="(150,290)" name="Pin">
       <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(220,150)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="CLK"/>
     </comp>
     <comp lib="0" loc="(250,150)" name="Tunnel">
       <a name="facing" val="north"/>
@@ -6643,10 +6755,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="tristate" val="false"/>
       <a name="label" val="input"/>
     </comp>
-    <comp lib="0" loc="(220,180)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="CLK"/>
-    </comp>
   </circuit>
   <circuit name="Instruction Decoder">
     <a name="circuit" val="Instruction Decoder"/>
@@ -6675,25 +6783,21 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <circ-port height="10" pin="890,390" width="10" x="395" y="345"/>
       <circ-anchor facing="east" height="6" width="6" x="397" y="287"/>
     </appear>
-    <wire from="(280,240)" to="(330,240)"/>
-    <wire from="(450,220)" to="(470,220)"/>
-    <wire from="(450,240)" to="(470,240)"/>
-    <wire from="(390,220)" to="(390,230)"/>
-    <wire from="(280,250)" to="(280,260)"/>
-    <wire from="(280,230)" to="(280,240)"/>
-    <wire from="(180,230)" to="(200,230)"/>
-    <wire from="(180,240)" to="(200,240)"/>
-    <wire from="(180,250)" to="(200,250)"/>
-    <wire from="(180,260)" to="(200,260)"/>
-    <wire from="(360,250)" to="(360,260)"/>
-    <wire from="(440,230)" to="(450,230)"/>
-    <wire from="(390,240)" to="(390,260)"/>
-    <wire from="(350,250)" to="(360,250)"/>
-    <wire from="(240,240)" to="(280,240)"/>
-    <wire from="(240,250)" to="(280,250)"/>
-    <wire from="(350,230)" to="(390,230)"/>
-    <wire from="(350,240)" to="(390,240)"/>
-    <wire from="(390,230)" to="(430,230)"/>
+    <wire from="(220,250)" to="(220,260)"/>
+    <wire from="(220,230)" to="(220,240)"/>
+    <wire from="(390,240)" to="(410,240)"/>
+    <wire from="(390,220)" to="(410,220)"/>
+    <wire from="(220,240)" to="(270,240)"/>
+    <wire from="(300,250)" to="(300,260)"/>
+    <wire from="(330,220)" to="(330,230)"/>
+    <wire from="(330,240)" to="(330,260)"/>
+    <wire from="(290,250)" to="(300,250)"/>
+    <wire from="(380,230)" to="(390,230)"/>
+    <wire from="(180,250)" to="(220,250)"/>
+    <wire from="(180,240)" to="(220,240)"/>
+    <wire from="(290,240)" to="(330,240)"/>
+    <wire from="(290,230)" to="(330,230)"/>
+    <wire from="(330,230)" to="(370,230)"/>
     <comp lib="0" loc="(890,310)" name="Pin">
       <a name="facing" val="west"/>
       <a name="output" val="true"/>
@@ -6701,15 +6805,15 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Constante"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(390,220)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="16"/>
-      <a name="label" val="Constante"/>
-    </comp>
     <comp lib="0" loc="(890,260)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="6"/>
       <a name="label" val="Func-code"/>
+    </comp>
+    <comp lib="0" loc="(300,260)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rs"/>
     </comp>
     <comp lib="0" loc="(890,260)" name="Pin">
       <a name="facing" val="west"/>
@@ -6718,7 +6822,126 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="label" val="Func-code"/>
       <a name="labelloc" val="east"/>
     </comp>
-    <comp lib="0" loc="(220,250)" name="Splitter">
+    <comp lib="0" loc="(410,220)" name="Tunnel">
+      <a name="width" val="5"/>
+      <a name="label" val="Rd"/>
+    </comp>
+    <comp lib="0" loc="(890,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(890,180)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+    </comp>
+    <comp lib="0" loc="(890,390)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="26"/>
+      <a name="label" val="Destino-Salto"/>
+    </comp>
+    <comp lib="0" loc="(890,100)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+    </comp>
+    <comp lib="0" loc="(220,230)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="26"/>
+      <a name="label" val="Destino-Salto"/>
+    </comp>
+    <comp lib="0" loc="(890,220)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rd"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(890,180)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(330,260)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+    </comp>
+    <comp lib="0" loc="(410,240)" name="Tunnel">
+      <a name="width" val="6"/>
+      <a name="label" val="Func-code"/>
+    </comp>
+    <comp lib="0" loc="(330,220)" name="Tunnel">
+      <a name="facing" val="south"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Constante"/>
+    </comp>
+    <comp lib="0" loc="(890,220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rd"/>
+    </comp>
+    <comp lib="0" loc="(270,240)" name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="26"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="0"/>
+      <a name="bit9" val="0"/>
+      <a name="bit10" val="0"/>
+      <a name="bit11" val="0"/>
+      <a name="bit12" val="0"/>
+      <a name="bit13" val="0"/>
+      <a name="bit14" val="0"/>
+      <a name="bit15" val="0"/>
+      <a name="bit16" val="1"/>
+      <a name="bit17" val="1"/>
+      <a name="bit18" val="1"/>
+      <a name="bit19" val="1"/>
+      <a name="bit20" val="1"/>
+      <a name="bit21" val="2"/>
+      <a name="bit22" val="2"/>
+      <a name="bit23" val="2"/>
+      <a name="bit24" val="2"/>
+      <a name="bit25" val="2"/>
+    </comp>
+    <comp lib="0" loc="(890,310)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Constante"/>
+    </comp>
+    <comp lib="0" loc="(370,230)" name="Splitter">
+      <a name="fanout" val="3"/>
+      <a name="incoming" val="16"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="1"/>
+      <a name="bit6" val="1"/>
+      <a name="bit7" val="1"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="2"/>
+    </comp>
+    <comp lib="0" loc="(160,250)" name="Splitter">
       <a name="incoming" val="32"/>
       <a name="appear" val="center"/>
       <a name="bit1" val="0"/>
@@ -6753,203 +6976,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="bit30" val="1"/>
       <a name="bit31" val="1"/>
     </comp>
-    <comp lib="0" loc="(890,100)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="6"/>
-      <a name="label" val="Op-code"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(160,250)" name="Splitter">
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="32"/>
-      <a name="appear" val="center"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="0"/>
-      <a name="bit5" val="0"/>
-      <a name="bit6" val="0"/>
-      <a name="bit7" val="0"/>
-      <a name="bit8" val="1"/>
-      <a name="bit9" val="1"/>
-      <a name="bit10" val="1"/>
-      <a name="bit11" val="1"/>
-      <a name="bit12" val="1"/>
-      <a name="bit13" val="1"/>
-      <a name="bit14" val="1"/>
-      <a name="bit15" val="1"/>
-      <a name="bit16" val="2"/>
-      <a name="bit17" val="2"/>
-      <a name="bit18" val="2"/>
-      <a name="bit19" val="2"/>
-      <a name="bit20" val="2"/>
-      <a name="bit21" val="2"/>
-      <a name="bit22" val="2"/>
-      <a name="bit23" val="2"/>
-      <a name="bit24" val="3"/>
-      <a name="bit25" val="3"/>
-      <a name="bit26" val="3"/>
-      <a name="bit27" val="3"/>
-      <a name="bit28" val="3"/>
-      <a name="bit29" val="3"/>
-      <a name="bit30" val="3"/>
-      <a name="bit31" val="3"/>
-    </comp>
-    <comp lib="0" loc="(890,180)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rt"/>
-    </comp>
-    <comp lib="0" loc="(890,390)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="26"/>
-      <a name="label" val="Destino-Salto"/>
-    </comp>
-    <comp lib="0" loc="(360,260)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rs"/>
-    </comp>
-    <comp lib="0" loc="(890,100)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="6"/>
-      <a name="label" val="Op-code"/>
-    </comp>
-    <comp lib="0" loc="(280,260)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="6"/>
-      <a name="label" val="Op-code"/>
-    </comp>
-    <comp lib="0" loc="(890,220)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rd"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(890,180)" name="Pin">
-      <a name="facing" val="west"/>
-      <a name="output" val="true"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rt"/>
-      <a name="labelloc" val="east"/>
-    </comp>
-    <comp lib="0" loc="(890,220)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rd"/>
-    </comp>
-    <comp lib="0" loc="(470,240)" name="Tunnel">
-      <a name="width" val="6"/>
-      <a name="label" val="Func-code"/>
-    </comp>
-    <comp lib="0" loc="(390,260)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="width" val="5"/>
-      <a name="label" val="Rt"/>
-    </comp>
-    <comp lib="0" loc="(890,310)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="width" val="16"/>
-      <a name="label" val="Constante"/>
-    </comp>
-    <comp lib="0" loc="(220,250)" name="Splitter">
-      <a name="facing" val="west"/>
-      <a name="fanout" val="4"/>
-      <a name="incoming" val="32"/>
-      <a name="appear" val="center"/>
-      <a name="bit0" val="3"/>
-      <a name="bit1" val="3"/>
-      <a name="bit2" val="3"/>
-      <a name="bit4" val="3"/>
-      <a name="bit5" val="3"/>
-      <a name="bit6" val="3"/>
-      <a name="bit7" val="3"/>
-      <a name="bit8" val="2"/>
-      <a name="bit9" val="2"/>
-      <a name="bit10" val="2"/>
-      <a name="bit11" val="2"/>
-      <a name="bit12" val="2"/>
-      <a name="bit13" val="2"/>
-      <a name="bit14" val="2"/>
-      <a name="bit15" val="2"/>
-      <a name="bit16" val="1"/>
-      <a name="bit17" val="1"/>
-      <a name="bit18" val="1"/>
-      <a name="bit19" val="1"/>
-      <a name="bit20" val="1"/>
-      <a name="bit21" val="1"/>
-      <a name="bit22" val="1"/>
-      <a name="bit23" val="1"/>
-      <a name="bit24" val="0"/>
-      <a name="bit25" val="0"/>
-      <a name="bit26" val="0"/>
-      <a name="bit27" val="0"/>
-      <a name="bit28" val="0"/>
-      <a name="bit29" val="0"/>
-      <a name="bit30" val="0"/>
-      <a name="bit31" val="0"/>
-    </comp>
-    <comp lib="0" loc="(430,230)" name="Splitter">
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="16"/>
-      <a name="appear" val="center"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="0"/>
-      <a name="bit5" val="1"/>
-      <a name="bit6" val="1"/>
-      <a name="bit7" val="1"/>
-      <a name="bit8" val="1"/>
-      <a name="bit9" val="1"/>
-      <a name="bit10" val="2"/>
-      <a name="bit11" val="2"/>
-      <a name="bit12" val="2"/>
-      <a name="bit13" val="2"/>
-      <a name="bit14" val="2"/>
-      <a name="bit15" val="2"/>
-    </comp>
-    <comp lib="0" loc="(280,230)" name="Tunnel">
-      <a name="facing" val="south"/>
-      <a name="width" val="26"/>
-      <a name="label" val="Destino-Salto"/>
-    </comp>
     <comp lib="0" loc="(890,140)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="width" val="5"/>
       <a name="label" val="Rs"/>
-    </comp>
-    <comp lib="0" loc="(330,240)" name="Splitter">
-      <a name="fanout" val="3"/>
-      <a name="incoming" val="26"/>
-      <a name="appear" val="center"/>
-      <a name="bit1" val="0"/>
-      <a name="bit2" val="0"/>
-      <a name="bit3" val="0"/>
-      <a name="bit4" val="0"/>
-      <a name="bit5" val="0"/>
-      <a name="bit6" val="0"/>
-      <a name="bit7" val="0"/>
-      <a name="bit8" val="0"/>
-      <a name="bit9" val="0"/>
-      <a name="bit10" val="0"/>
-      <a name="bit11" val="0"/>
-      <a name="bit12" val="0"/>
-      <a name="bit13" val="0"/>
-      <a name="bit14" val="0"/>
-      <a name="bit15" val="0"/>
-      <a name="bit16" val="1"/>
-      <a name="bit17" val="1"/>
-      <a name="bit18" val="1"/>
-      <a name="bit19" val="1"/>
-      <a name="bit20" val="1"/>
-      <a name="bit21" val="2"/>
-      <a name="bit22" val="2"/>
-      <a name="bit23" val="2"/>
-      <a name="bit24" val="2"/>
-      <a name="bit25" val="2"/>
     </comp>
     <comp lib="0" loc="(890,140)" name="Pin">
       <a name="facing" val="west"/>
@@ -6957,6 +6987,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="5"/>
       <a name="label" val="Rs"/>
       <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(220,260)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
     </comp>
     <comp lib="0" loc="(890,390)" name="Pin">
       <a name="facing" val="west"/>
@@ -6969,10 +7004,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="tristate" val="false"/>
       <a name="label" val="Instruction"/>
-    </comp>
-    <comp lib="0" loc="(470,220)" name="Tunnel">
-      <a name="width" val="5"/>
-      <a name="label" val="Rd"/>
     </comp>
   </circuit>
   <circuit name="Branch Control">
@@ -7014,6 +7045,608 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="width" val="32"/>
       <a name="label" val="Next Instruction Address"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+  <circuit name="RAM Access">
+    <a name="circuit" val="RAM Access"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M431,420 Q440,399 450,419" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="129" stroke="#000000" stroke-width="2" width="200" x="280" y="291"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="293" y="315">O0</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="293" y="344">O1</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="293" y="374">O2</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="293" y="405">O3</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="419" y="305">Start</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="400" y="415">R/W</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="460" y="344">Mask</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="449" y="374">Curr. Inst.</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="462" y="314">Adrs</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="456" y="403">Ready</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="322" y="415">R. T.</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="362" y="416">W. T.</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="340" y="305">Target</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="378" y="350">RAM</text>
+      <text font-family="SansSerif" font-size="20" font-weight="bold" text-anchor="middle" x="378" y="374">ACCESS</text>
+      <circ-port height="8" pin="160,70" width="8" x="416" y="286"/>
+      <circ-port height="8" pin="160,130" width="8" x="336" y="286"/>
+      <circ-port height="8" pin="160,220" width="8" x="276" y="306"/>
+      <circ-port height="8" pin="160,310" width="8" x="276" y="336"/>
+      <circ-port height="8" pin="160,400" width="8" x="276" y="366"/>
+      <circ-port height="8" pin="160,490" width="8" x="276" y="396"/>
+      <circ-port height="8" pin="160,550" width="8" x="316" y="416"/>
+      <circ-port height="8" pin="160,580" width="8" x="356" y="416"/>
+      <circ-port height="8" pin="160,610" width="8" x="396" y="416"/>
+      <circ-port height="8" pin="160,640" width="8" x="436" y="416"/>
+      <circ-port height="10" pin="960,100" width="10" x="475" y="305"/>
+      <circ-port height="10" pin="960,170" width="10" x="475" y="335"/>
+      <circ-port height="10" pin="960,290" width="10" x="475" y="365"/>
+      <circ-port height="10" pin="960,410" width="10" x="475" y="395"/>
+      <circ-anchor facing="east" height="6" width="6" x="477" y="307"/>
+    </appear>
+    <wire from="(920,190)" to="(920,200)"/>
+    <wire from="(390,90)" to="(390,100)"/>
+    <wire from="(390,110)" to="(390,120)"/>
+    <wire from="(540,310)" to="(580,310)"/>
+    <wire from="(880,310)" to="(880,330)"/>
+    <wire from="(380,290)" to="(420,290)"/>
+    <wire from="(920,300)" to="(940,300)"/>
+    <wire from="(920,280)" to="(940,280)"/>
+    <wire from="(920,290)" to="(940,290)"/>
+    <wire from="(920,270)" to="(940,270)"/>
+    <wire from="(390,90)" to="(400,90)"/>
+    <wire from="(380,100)" to="(390,100)"/>
+    <wire from="(380,110)" to="(390,110)"/>
+    <wire from="(390,120)" to="(400,120)"/>
+    <wire from="(790,280)" to="(860,280)"/>
+    <wire from="(790,300)" to="(860,300)"/>
+    <wire from="(850,270)" to="(860,270)"/>
+    <wire from="(850,290)" to="(860,290)"/>
+    <comp lib="0" loc="(850,290)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O2"/>
+    </comp>
+    <comp lib="0" loc="(420,310)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Start"/>
+    </comp>
+    <comp lib="0" loc="(160,220)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(960,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Mask"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(160,130)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(160,610)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(580,290)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="4" loc="(620,290)" name="D Flip-Flop">
+      <a name="trigger" val="falling"/>
+    </comp>
+    <comp lib="0" loc="(790,300)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O3"/>
+    </comp>
+    <comp lib="0" loc="(160,550)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(160,490)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O3"/>
+    </comp>
+    <comp lib="0" loc="(350,300)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Write Time"/>
+    </comp>
+    <comp lib="0" loc="(790,280)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O1"/>
+    </comp>
+    <comp lib="0" loc="(160,70)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(510,330)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Ready"/>
+    </comp>
+    <comp lib="0" loc="(160,400)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O2"/>
+    </comp>
+    <comp lib="0" loc="(160,310)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(160,610)" name="Tunnel">
+      <a name="label" val="R/W"/>
+    </comp>
+    <comp lib="2" loc="(900,290)" name="Multiplexer">
+      <a name="select" val="2"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(160,640)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(960,100)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Address"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(350,280)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Read Time"/>
+    </comp>
+    <comp lib="0" loc="(360,110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Target"/>
+    </comp>
+    <comp lib="0" loc="(900,290)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="0"/>
+      <a name="bit3" val="0"/>
+      <a name="bit4" val="0"/>
+      <a name="bit5" val="0"/>
+      <a name="bit6" val="0"/>
+      <a name="bit7" val="0"/>
+      <a name="bit8" val="1"/>
+      <a name="bit9" val="1"/>
+      <a name="bit10" val="1"/>
+      <a name="bit11" val="1"/>
+      <a name="bit12" val="1"/>
+      <a name="bit13" val="1"/>
+      <a name="bit14" val="1"/>
+      <a name="bit15" val="1"/>
+      <a name="bit16" val="2"/>
+      <a name="bit17" val="2"/>
+      <a name="bit18" val="2"/>
+      <a name="bit19" val="2"/>
+      <a name="bit20" val="2"/>
+      <a name="bit21" val="2"/>
+      <a name="bit22" val="2"/>
+      <a name="bit23" val="2"/>
+      <a name="bit24" val="3"/>
+      <a name="bit25" val="3"/>
+      <a name="bit26" val="3"/>
+      <a name="bit27" val="3"/>
+      <a name="bit28" val="3"/>
+      <a name="bit29" val="3"/>
+      <a name="bit30" val="3"/>
+      <a name="bit31" val="3"/>
+    </comp>
+    <comp lib="0" loc="(960,410)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Ready"/>
+    </comp>
+    <comp lib="0" loc="(360,110)" name="Splitter">
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+      <a name="bit1" val="0"/>
+      <a name="bit2" val="1"/>
+      <a name="bit3" val="1"/>
+      <a name="bit4" val="2"/>
+      <a name="bit5" val="2"/>
+      <a name="bit6" val="2"/>
+      <a name="bit7" val="2"/>
+      <a name="bit8" val="2"/>
+      <a name="bit9" val="2"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="2"/>
+      <a name="bit16" val="2"/>
+      <a name="bit17" val="2"/>
+      <a name="bit18" val="2"/>
+      <a name="bit19" val="2"/>
+      <a name="bit20" val="3"/>
+      <a name="bit21" val="3"/>
+      <a name="bit22" val="3"/>
+      <a name="bit23" val="3"/>
+      <a name="bit24" val="3"/>
+      <a name="bit25" val="3"/>
+      <a name="bit26" val="3"/>
+      <a name="bit27" val="3"/>
+      <a name="bit28" val="3"/>
+      <a name="bit29" val="3"/>
+      <a name="bit30" val="3"/>
+      <a name="bit31" val="3"/>
+    </comp>
+    <comp lib="0" loc="(360,310)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="R/W"/>
+    </comp>
+    <comp lib="0" loc="(160,490)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(960,170)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="4"/>
+      <a name="appear" val="center"/>
+    </comp>
+    <comp lib="0" loc="(920,200)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="2"/>
+      <a name="label" val="Mask_Aux"/>
+    </comp>
+    <comp lib="0" loc="(400,120)" name="Tunnel">
+      <a name="width" val="16"/>
+      <a name="label" val="Address"/>
+    </comp>
+    <comp lib="0" loc="(160,310)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O1"/>
+    </comp>
+    <comp lib="0" loc="(160,400)" name="Pin">
+      <a name="width" val="32"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(160,550)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="Read Time"/>
+    </comp>
+    <comp lib="0" loc="(960,290)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="width" val="32"/>
+      <a name="label" val="Current Instruction"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(400,90)" name="Tunnel">
+      <a name="width" val="2"/>
+      <a name="label" val="Mask_Aux"/>
+    </comp>
+    <comp lib="0" loc="(850,270)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O0"/>
+    </comp>
+    <comp lib="2" loc="(380,290)" name="Multiplexer">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(160,130)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="Target"/>
+    </comp>
+    <comp lib="0" loc="(880,330)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="2"/>
+      <a name="label" val="Mask_Aux"/>
+    </comp>
+    <comp lib="0" loc="(960,100)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="16"/>
+      <a name="label" val="Address"/>
+    </comp>
+    <comp lib="0" loc="(160,580)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(470,330)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(620,290)" name="Tunnel">
+      <a name="label" val="Ready"/>
+    </comp>
+    <comp lib="0" loc="(160,580)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="Write Time"/>
+    </comp>
+    <comp lib="0" loc="(160,640)" name="Tunnel">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(160,70)" name="Tunnel">
+      <a name="label" val="Start"/>
+    </comp>
+    <comp lib="0" loc="(160,220)" name="Tunnel">
+      <a name="width" val="32"/>
+      <a name="label" val="RAM O0"/>
+    </comp>
+    <comp loc="(540,310)" name="Latency"/>
+    <comp lib="0" loc="(960,290)" name="Splitter">
+      <a name="facing" val="west"/>
+      <a name="fanout" val="4"/>
+      <a name="incoming" val="32"/>
+      <a name="appear" val="center"/>
+      <a name="bit0" val="3"/>
+      <a name="bit1" val="3"/>
+      <a name="bit2" val="3"/>
+      <a name="bit4" val="3"/>
+      <a name="bit5" val="3"/>
+      <a name="bit6" val="3"/>
+      <a name="bit7" val="3"/>
+      <a name="bit8" val="2"/>
+      <a name="bit9" val="2"/>
+      <a name="bit10" val="2"/>
+      <a name="bit11" val="2"/>
+      <a name="bit12" val="2"/>
+      <a name="bit13" val="2"/>
+      <a name="bit14" val="2"/>
+      <a name="bit15" val="2"/>
+      <a name="bit16" val="1"/>
+      <a name="bit17" val="1"/>
+      <a name="bit18" val="1"/>
+      <a name="bit19" val="1"/>
+      <a name="bit20" val="1"/>
+      <a name="bit21" val="1"/>
+      <a name="bit22" val="1"/>
+      <a name="bit23" val="1"/>
+      <a name="bit24" val="0"/>
+      <a name="bit25" val="0"/>
+      <a name="bit26" val="0"/>
+      <a name="bit27" val="0"/>
+      <a name="bit28" val="0"/>
+      <a name="bit29" val="0"/>
+      <a name="bit30" val="0"/>
+      <a name="bit31" val="0"/>
+    </comp>
+    <comp lib="0" loc="(960,410)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Ready"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="2" loc="(920,190)" name="Decoder">
+      <a name="select" val="2"/>
+    </comp>
+  </circuit>
+  <circuit name="Latency">
+    <a name="circuit" val="Latency"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="378" y="252">Ready</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="370" y="266">0</text>
+      <path d="M336,270 Q329,253 324,270" fill="none" stroke="#808080" stroke-width="2"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="296" y="255">Start</text>
+      <rect fill="none" height="60" stroke="#000000" stroke-width="2" width="120" x="281" y="211"/>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="298" y="235">Time</text>
+      <text font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="358" y="229">LATENCY</text>
+      <circ-port height="8" pin="140,100" width="8" x="276" y="226"/>
+      <circ-port height="8" pin="140,160" width="8" x="276" y="246"/>
+      <circ-port height="8" pin="140,220" width="8" x="326" y="266"/>
+      <circ-port height="8" pin="140,280" width="8" x="366" y="266"/>
+      <circ-port height="10" pin="980,170" width="10" x="395" y="245"/>
+      <circ-anchor facing="east" height="6" width="6" x="397" y="247"/>
+    </appear>
+    <wire from="(420,220)" to="(430,220)"/>
+    <wire from="(440,220)" to="(450,220)"/>
+    <wire from="(440,200)" to="(440,220)"/>
+    <wire from="(430,200)" to="(430,220)"/>
+    <wire from="(450,180)" to="(500,180)"/>
+    <comp lib="0" loc="(140,100)" name="Pin">
+      <a name="width" val="4"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(140,280)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(140,280)" name="Tunnel">
+      <a name="label" val="RST"/>
+    </comp>
+    <comp lib="0" loc="(420,220)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="0" loc="(140,160)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(450,220)" name="Tunnel">
+      <a name="label" val="RST"/>
+    </comp>
+    <comp lib="0" loc="(980,170)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Ready"/>
+    </comp>
+    <comp lib="4" loc="(450,180)" name="Counter">
+      <a name="width" val="4"/>
+      <a name="max" val="0xf"/>
+    </comp>
+    <comp lib="0" loc="(540,170)" name="Tunnel">
+      <a name="label" val="Ready"/>
+    </comp>
+    <comp lib="0" loc="(140,220)" name="Tunnel">
+      <a name="label" val="CLK"/>
+    </comp>
+    <comp lib="3" loc="(540,170)" name="Comparator">
+      <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(140,220)" name="Pin">
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(140,160)" name="Tunnel">
+      <a name="label" val="Start"/>
+    </comp>
+    <comp lib="0" loc="(420,190)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="Start"/>
+    </comp>
+    <comp lib="0" loc="(140,100)" name="Tunnel">
+      <a name="width" val="4"/>
+      <a name="label" val="Time"/>
+    </comp>
+    <comp lib="0" loc="(500,160)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="4"/>
+      <a name="label" val="Time"/>
+    </comp>
+    <comp lib="0" loc="(980,170)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="Ready"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+  </circuit>
+  <circuit name="Operation Type">
+    <a name="circuit" val="Operation Type"/>
+    <a name="clabel" val=""/>
+    <a name="clabelup" val="east"/>
+    <a name="clabelfont" val="SansSerif plain 12"/>
+    <appear>
+      <path d="M368,289 Q375,272 383,289" fill="none" stroke="#808080" stroke-width="2"/>
+      <rect fill="none" height="79" stroke="#000000" stroke-width="2" width="72" x="340" y="211"/>
+      <text font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="366" y="235">OP</text>
+      <text font-family="SansSerif" font-size="16" font-weight="bold" text-anchor="middle" x="366" y="252">TYPE</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="401" y="234">R</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="401" y="255">I</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="402" y="276">J</text>
+      <text font-family="SansSerif" font-size="12" text-anchor="middle" x="352" y="275">Op</text>
+      <circ-port height="8" pin="150,260" width="8" x="336" y="266"/>
+      <circ-port height="10" pin="980,230" width="10" x="405" y="225"/>
+      <circ-port height="10" pin="980,280" width="10" x="405" y="245"/>
+      <circ-port height="10" pin="980,330" width="10" x="405" y="265"/>
+      <circ-anchor facing="east" height="6" width="6" x="407" y="247"/>
+    </appear>
+    <wire from="(590,280)" to="(590,320)"/>
+    <wire from="(590,220)" to="(590,260)"/>
+    <wire from="(580,270)" to="(600,270)"/>
+    <wire from="(580,320)" to="(590,320)"/>
+    <wire from="(580,220)" to="(590,220)"/>
+    <wire from="(590,280)" to="(600,280)"/>
+    <wire from="(590,260)" to="(600,260)"/>
+    <comp lib="0" loc="(540,260)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+    </comp>
+    <comp lib="1" loc="(580,420)" name="AND Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="2"/>
+      <a name="negate0" val="true"/>
+      <a name="negate1" val="true"/>
+    </comp>
+    <comp lib="0" loc="(980,230)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="R"/>
+    </comp>
+    <comp lib="0" loc="(580,420)" name="Tunnel">
+      <a name="label" val="I"/>
+    </comp>
+    <comp lib="3" loc="(580,320)" name="Comparator">
+      <a name="width" val="6"/>
+    </comp>
+    <comp lib="0" loc="(540,110)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+    </comp>
+    <comp lib="0" loc="(980,280)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="I"/>
+    </comp>
+    <comp lib="0" loc="(630,270)" name="Tunnel">
+      <a name="label" val="R"/>
+    </comp>
+    <comp lib="0" loc="(980,230)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="R"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="3" loc="(580,220)" name="Comparator">
+      <a name="width" val="6"/>
+    </comp>
+    <comp lib="0" loc="(580,120)" name="Tunnel">
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(540,230)" name="Constant">
+      <a name="width" val="6"/>
+      <a name="value" val="0x0"/>
+    </comp>
+    <comp lib="0" loc="(540,210)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+    </comp>
+    <comp lib="0" loc="(540,330)" name="Constant">
+      <a name="width" val="6"/>
+      <a name="value" val="0x3f"/>
+    </comp>
+    <comp lib="0" loc="(980,280)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="I"/>
+      <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="1" loc="(630,270)" name="OR Gate">
+      <a name="size" val="30"/>
+      <a name="inputs" val="3"/>
+    </comp>
+    <comp lib="0" loc="(150,260)" name="Pin">
+      <a name="width" val="6"/>
+      <a name="tristate" val="false"/>
+    </comp>
+    <comp lib="0" loc="(540,410)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="R"/>
+    </comp>
+    <comp lib="0" loc="(540,280)" name="Constant">
+      <a name="width" val="6"/>
+      <a name="value" val="0x38"/>
+    </comp>
+    <comp lib="3" loc="(580,120)" name="Comparator">
+      <a name="width" val="6"/>
+    </comp>
+    <comp lib="0" loc="(540,310)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+    </comp>
+    <comp lib="0" loc="(980,330)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(150,260)" name="Tunnel">
+      <a name="width" val="6"/>
+      <a name="label" val="Op-code"/>
+    </comp>
+    <comp lib="0" loc="(540,430)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="J"/>
+    </comp>
+    <comp lib="0" loc="(540,130)" name="Constant">
+      <a name="width" val="6"/>
+      <a name="value" val="0x2"/>
+    </comp>
+    <comp lib="3" loc="(580,270)" name="Comparator">
+      <a name="width" val="6"/>
+    </comp>
+    <comp lib="0" loc="(980,330)" name="Pin">
+      <a name="facing" val="west"/>
+      <a name="output" val="true"/>
+      <a name="label" val="J"/>
       <a name="labelloc" val="east"/>
     </comp>
   </circuit>
