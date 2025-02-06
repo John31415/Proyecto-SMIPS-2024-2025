@@ -1753,6 +1753,11 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="facing" val="north"/>
       <a name="label" val="CS"/>
     </comp>
+    <comp lib="0" loc="(330,590)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="width" val="5"/>
+      <a name="label" val="Rt"/>
+    </comp>
     <comp lib="0" loc="(800,180)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="Zero Time"/>
@@ -3239,10 +3244,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(750,180)" name="Tunnel">
       <a name="label" val="pop"/>
     </comp>
-    <comp lib="0" loc="(380,200)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="EN"/>
-    </comp>
     <comp lib="0" loc="(300,500)" name="Tunnel">
       <a name="facing" val="south"/>
       <a name="label" val="RegW"/>
@@ -3522,6 +3523,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="output" val="true"/>
       <a name="label" val="KBDen"/>
       <a name="labelloc" val="east"/>
+    </comp>
+    <comp lib="0" loc="(380,200)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="startEN"/>
     </comp>
     <comp lib="0" loc="(990,110)" name="Pin">
       <a name="facing" val="west"/>
@@ -11149,11 +11154,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(450,280)" to="(450,290)"/>
     <wire from="(450,140)" to="(450,150)"/>
     <wire from="(440,150)" to="(440,160)"/>
-    <wire from="(480,290)" to="(480,300)"/>
-    <wire from="(470,280)" to="(470,290)"/>
     <wire from="(470,140)" to="(470,150)"/>
     <wire from="(480,150)" to="(480,160)"/>
     <wire from="(450,590)" to="(450,600)"/>
+    <wire from="(470,280)" to="(470,300)"/>
     <wire from="(820,300)" to="(860,300)"/>
     <wire from="(820,320)" to="(860,320)"/>
     <wire from="(920,320)" to="(940,320)"/>
@@ -11162,9 +11166,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <wire from="(920,290)" to="(940,290)"/>
     <wire from="(440,290)" to="(450,290)"/>
     <wire from="(440,150)" to="(450,150)"/>
-    <wire from="(470,290)" to="(480,290)"/>
     <wire from="(470,150)" to="(480,150)"/>
     <wire from="(450,600)" to="(460,600)"/>
+    <wire from="(470,300)" to="(480,300)"/>
     <wire from="(860,470)" to="(930,470)"/>
     <wire from="(920,460)" to="(930,460)"/>
     <wire from="(920,480)" to="(930,480)"/>
@@ -11570,6 +11574,9 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="width" val="32"/>
       <a name="label" val="RAM O3"/>
     </comp>
+    <comp lib="0" loc="(480,300)" name="Tunnel">
+      <a name="label" val="Ready Write"/>
+    </comp>
     <comp lib="4" loc="(470,370)" name="D Flip-Flop">
       <a name="trigger" val="falling"/>
     </comp>
@@ -11643,10 +11650,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(960,510)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="Ready_Inst"/>
-    </comp>
-    <comp lib="0" loc="(480,300)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="RST"/>
     </comp>
     <comp lib="2" loc="(920,210)" name="Decoder">
       <a name="select" val="2"/>
@@ -11893,10 +11896,6 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
     <comp lib="0" loc="(510,540)" name="Tunnel">
       <a name="label" val="Ready"/>
     </comp>
-    <comp lib="0" loc="(510,370)" name="Tunnel">
-      <a name="facing" val="north"/>
-      <a name="label" val="RST"/>
-    </comp>
     <comp lib="0" loc="(160,530)" name="Tunnel">
       <a name="label" val="Get"/>
     </comp>
@@ -11934,6 +11933,10 @@ This file is intended to be loaded by Logisim (http://www.cburch.com/logisim/).
       <a name="facing" val="east"/>
       <a name="width" val="32"/>
       <a name="label" val="RAM O2"/>
+    </comp>
+    <comp lib="0" loc="(510,370)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="Ready"/>
     </comp>
     <comp lib="0" loc="(980,220)" name="Pin">
       <a name="facing" val="west"/>
